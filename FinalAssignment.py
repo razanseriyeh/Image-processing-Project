@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-#סעיף א - הצגה וניתוח של התמונה המקורית 
+#הצגה וניתוח של התמונה המקורית 
 def analyze_image(input_image_path, output_folder_path):
     input_image = cv2.imread(input_image_path) #טעינת התמונה
     ###grayimg.png###
@@ -90,7 +90,7 @@ gray_image=analyze_image(input_image_path,output_folder_path)
 
 
 
-#סעיף ב - תיקון ושיפור התמונה המקורית 
+# תיקון ושיפור התמונה המקורית 
 def first_op(input_image_path,output_folder_path):
     image = Image.fromarray(input_image_path)
     box = (0,0,3600,2800)  #  חיתוך מרובע מהנקודה (0, 0) עד (2800, 3600)
@@ -119,19 +119,20 @@ img_firstop=first_op(gray_image,output_folder_path)
 img_secondop=second_op(img_firstop,output_folder_path)
 
 
-#סעיף ג - הצגה וניתוח של התמונה המתוקנת 
+#הצגה וניתוח של התמונה המתוקנת 
 output_folder_path2 = r'C:\Users\sami3\Downloads\output_images2'
 plt.figure()
 analyze_image(img_secondop,output_folder_path2)
 
-#סעיף ד - הגרסה הצבעונית 
+#הגרסה הצבעונית 
 input_image = cv2.imread(input_image_path) #טעינת התמונה
 img_firstop=first_op(input_image,output_folder_path2)
 img_secondop=second_op(img_firstop,output_folder_path2)
 
-#סעיף ה -תמונה אחרת 
+#תמונה אחרת 
 input_image_path=r'C:\Users\sami3\Downloads\newimg.jpeg'
 output_folder_path3=r'C:\Users\sami3\Downloads\output_images3'
 input_image = cv2.imread(input_image_path) #טעינת התמונה
 img_firstop=first_op(input_image,output_folder_path3)
+
 img_secondop=second_op(img_firstop,output_folder_path3)
